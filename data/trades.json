@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "user": "Wahid",
+    "ticker": "NVDA",
+    "direction": "Buy",
+    "price": 100.0,
+    "quantity": 10,
+    "matched": true
+  }
+]

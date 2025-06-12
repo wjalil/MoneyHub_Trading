@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "user": "Mofo",
+    "ticker": "NVDA",
+    "qty": -10,
+    "entry_price": 100.0,
+    "exit_price": 101.69,
+    "pnl": -16.899999999999977,
+    "timestamp": "2025-06-12 13:30:10"
+  }
+]
