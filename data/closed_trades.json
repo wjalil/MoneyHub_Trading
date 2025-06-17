@@ -7,5 +7,45 @@
     "exit_price": 101.69,
     "pnl": -16.899999999999977,
     "timestamp": "2025-06-12 13:30:10"
+  },
+  {
+    "user": "Joe",
+    "ticker": "CHARIZARD",
+    "qty": -1,
+    "entry_price": 500.0,
+    "exit_price": 492.62,
+    "pnl": 7.3799999999999955,
+    "timestamp": "2025-06-16 23:31:21",
+    "direction": "Short"
+  },
+  {
+    "user": "Mofo",
+    "ticker": "CHARIZARD",
+    "qty": 1,
+    "entry_price": 500.0,
+    "exit_price": 499.91,
+    "pnl": -0.08999999999997499,
+    "timestamp": "2025-06-16 23:31:42",
+    "direction": "Long"
+  },
+  {
+    "user": "Wahid",
+    "ticker": "NVDA",
+    "qty": 11,
+    "entry_price": 91.0,
+    "exit_price": 92.36,
+    "pnl": 14.959999999999994,
+    "timestamp": "2025-06-16 23:36:16",
+    "direction": "Long"
+  },
+  {
+    "user": "Wahid",
+    "ticker": "WHALE",
+    "qty": -1,
+    "entry_price": 2000.0,
+    "exit_price": 1901.3,
+    "pnl": 98.70000000000005,
+    "timestamp": "2025-06-16 23:36:21",
+    "direction": "Short"
   }
 ]
