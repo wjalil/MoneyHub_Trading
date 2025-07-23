@@ -38,5 +38,13 @@
     "price": 1.0,
     "quantity": 50,
     "matched": true
+  },
+  {
+    "user": "Wahid",
+    "ticker": "AAPL",
+    "direction": "Buy",
+    "price": 1.0,
+    "quantity": 1,
+    "matched": true
   }
 ]

@@ -75,12 +75,29 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-username = st.text_input("Enter your name to begin:", max_chars=30)
-if not username:
-    st.stop()
+if "username" not in st.session_state or "team" not in st.session_state:
+    with st.form("login_form"):
+        username_input = st.text_input("Enter your name:", max_chars=30)
+        team_input = st.text_input("Enter your team name (optional):", max_chars=30)
+        submitted = st.form_submit_button("Start")
+
+    if submitted:
+        if username_input.strip() == "":
+            st.warning("Please enter your name to begin.")
+            st.stop()
+        # ✅ Set session state BEFORE rerun
+        st.session_state.username = username_input.strip()
+        st.session_state.team = team_input.strip() if team_input else "No Team"
+        st.rerun()
+
+# ✅ Now safe to access these values
+username = st.session_state.get("username")
+team = st.session_state.get("team")
+
+
 
 if username not in users:
-    users[username] = {"cash": 10000, "positions": {}, "pnl": 0}
+    users[username] = {"cash": 10000, "positions": {}, "pnl": 0, "team": team}
     save_users(USERS_FILE, users)
 
 user_data = users[username]
@@ -394,7 +411,35 @@ elif view == "Leaderboard":
         "Net Worth ($)": [f"${x[1]:,.2f}" for x in leaderboard]
     })
 
-if username.lower() == "teacher":
+if username.lower() and username== "teacher":
+
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("🧑‍🏫 **Manage Teams & Student Cash**")
+    for user, data in users.items():
+        col1, col2 = st.sidebar.columns([2, 1])
+        col1.write(f"👤 {user} ({data.get('team', 'No Team')})")
+        new_cash = col2.number_input(f"${user}", min_value=0, value=int(data["cash"]), step=100, key=f"cash_{user}")
+        if new_cash != data["cash"]:
+            users[user]["cash"] = new_cash
+    if st.sidebar.button("💾 Save Updates"):
+        save_users(USERS_FILE, users)
+        st.success("User balances updated.")
+
+    st.sidebar.markdown("🏷️ **Assign Cash by Team**")
+
+# Get unique teams
+    teams = sorted(set(data.get("team") or "No Team" for data in users.values()))
+    selected_team = st.sidebar.selectbox("Select Team", teams)
+    team_cash = st.sidebar.number_input("Cash for Selected Team", min_value=0, value=10000, step=100)
+
+    if st.sidebar.button("💰 Set Cash for Team"):
+        for user, data in users.items():
+            if data.get("team") == selected_team:
+                users[user]["cash"] = team_cash
+        save_users(USERS_FILE, users)
+        st.success(f"Updated cash for all members of '{selected_team}' to ${team_cash:,}")
+
+
     if st.sidebar.button("\U0001F9F9 Reset All Data"):
         users = {}
         trades = []

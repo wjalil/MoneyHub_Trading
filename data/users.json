@@ -1,73 +1,60 @@
 {
   "Wahid": {
-    "cash": 10063.66,
+    "cash": 1499.0,
     "positions": {
-      "NVDA": {
-        "qty": 0,
-        "entry_price": 91.0
-      },
-      "WHALE": {
-        "qty": 0,
-        "entry_price": 2000.0
-      },
-      "OCTOPUS": {
-        "qty": 50,
+      "AAPL": {
+        "qty": 1,
         "entry_price": 1.0
       }
     },
-    "pnl": 0
-  },
-  "Mofo": {
-    "cash": 10033.01,
-    "positions": {
-      "NVDA": {
-        "qty": 0,
-        "entry_price": 100.0
-      },
-      "CHARIZARD": {
-        "qty": 0,
-        "entry_price": 500.0
-      },
-      "OCTOPUS": {
-        "qty": -50,
-        "entry_price": 1.0
-      }
-    },
-    "pnl": 0
+    "pnl": 0,
+    "team": ""
   },
   "Tanjila": {
     "cash": 10000,
     "positions": {},
-    "pnl": 0
+    "pnl": 0,
+    "team": "Team A"
   },
-  "mofo": {
-    "cash": 10001.0,
+  "Mofo": {
+    "cash": 10000,
+    "positions": {},
+    "pnl": 0,
+    "team": "Team "
+  },
+  "teacher": {
+    "cash": 10000,
+    "positions": {},
+    "pnl": 0,
+    "team": "Team A"
+  },
+  "wahid": {
+    "cash": 10000,
+    "positions": {},
+    "pnl": 0,
+    "team": ""
+  },
+  "null": {
+    "cash": 10000,
+    "positions": {},
+    "pnl": 0,
+    "team": null
+  },
+  "Tanila": {
+    "cash": 10000,
     "positions": {
-      "NVDA": {
-        "qty": -1,
+      "AAPL": {
+        "qty": 0,
         "entry_price": 1.0
       }
     },
-    "pnl": 0
+    "pnl": 0,
+    "team": "Team Blastoise"
   },
-  "Joe": {
-    "cash": 10507.38,
-    "positions": {
-      "CHARIZARD": {
-        "qty": 0,
-        "entry_price": 500.0
-      }
-    },
-    "pnl": 0
-  },
-  "Mike": {
-    "cash": 8000.0,
-    "positions": {
-      "WHALE": {
-        "qty": 1,
-        "entry_price": 2000.0
-      }
-    },
-    "pnl": 0
+  "teac": {
+    "cash": 10000,
+    "positions": {},
+    "pnl": 0,
+    "team": "No Team"
   }
 }
